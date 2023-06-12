@@ -23,18 +23,18 @@
     <br></br>
     <table class="table table-bordered">
         <tr>
-            <th>Rank</th>
+            <th>#</th>
             <th>Name</th>
             <th>Games</th>
             <th>Wins</th>
-            <th width="250px">Action</th>
+            <th width="110px">Action</th>
         </tr>
         @foreach ($members as $member)
         <tr>
-            <td></td>
+            <td>.</td>
             <td>{{ $member->name }}</td>
-            <td>5</td>
-            <td>5</td>
+            <td>{{ $games[$member->id] }}</td>
+            <td>{{ $wins[$member->id] }}</td>
             <td>
                 <form action="{{ route('members.destroy',$member->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('members.show',$member->id) }}">Show</a>

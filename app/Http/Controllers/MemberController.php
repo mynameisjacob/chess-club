@@ -66,7 +66,7 @@ class MemberController extends Controller
                     if ($member->id == $game->winner){
                         $white_wins++;
                         if ($least_win_moves != 0){
-                            if ($least_win_moves > $game->wmoves){
+                            if ($least_win_moves > $game->wmoves && $game->wmoves != NULL){
                                 $least_win_moves = $game->wmoves;
                             }
                         }
@@ -79,7 +79,7 @@ class MemberController extends Controller
                     if ($member->id == $game->winner){
                         $black_wins++;
                         if ($least_win_moves != 0){
-                            if ($least_win_moves > $game->bmoves){
+                            if ($least_win_moves > $game->bmoves && $game->bmoves != NULL){
                                 $least_win_moves = $game->bmoves;
                             }
                         }
