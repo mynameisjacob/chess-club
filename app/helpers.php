@@ -2,7 +2,7 @@
 use App\Models\Member;
 use App\Models\Game;
 
-function idToName($game){
+function idToName($game){ //show name of member instead of id
     $white_player = Member::select('name')->where('id', $game->white)->first();
     $game->white = $white_player->name;
     $black_player = Member::select('name')->where('id', $game->black)->first();
@@ -12,7 +12,7 @@ function idToName($game){
     return $game;
 }
 
-function getToday(){
+function getToday(){ //get today date
     $month = date('m');
     $day = date('d');
     $year = date('Y');
@@ -20,7 +20,7 @@ function getToday(){
     return $today;
 }
 
-function bestPlayers(){
+function bestPlayers(){ //get best players (not completely done)
     $games = Game::all();
     $whiteGamesCount = [];
     $blackGamesCount = [];
